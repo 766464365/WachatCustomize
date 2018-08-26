@@ -1,0 +1,2 @@
+include ':app', ':lib_framework1'
+project(':lib_framework1').projectDir = new File('lib_framework')

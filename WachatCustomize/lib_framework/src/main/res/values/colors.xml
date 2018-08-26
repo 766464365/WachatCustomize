@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- QRCode scanner color begin -->
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#B0000000</color>
+    <color name="viewfinder_frame">#90FFFFFF</color>
+    <color name="result_point_color">#C0FFFF00</color>
+    <color name="laser_color">#0F0</color>
+    <color name="corner_color">#00FF00</color>
+    <color name="scan_title_black">#343434</color>
+    <!-- QRCode scanner color end -->
+
+    <color name="colorPrimary">#3f51b5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#ff4081</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colortitilebarblue">#FF2FAEED</color>
+    <color name="color_black">#000000</color>
+    <color name="color_hint_blue">#87CEFA</color>
+    <color name="color_gray">#F6F6F6</color>
+    <color name="color_orange">#FF9643</color>
+    <color name="color_green">#34D166</color>
+    <color name="color_orderstats_green">#34D166</color>
+    <color name="color_text_FF333333">#FF333333</color>
+    <color name="color_space_FFD8D8D8">#FFD8D8D8</color>
+
+    <!--按钮颜色-->
+    <color name="color_btn_gray">#FFBBBBBB</color>
+    <color name="color_btn_blue">#FF2FAEED</color>
+
+    <!--文本颜色-->
+    <color name="text_ff333333">#FF333333</color>
+    <color name="text_ff888888">#FF888888</color>
+    <color name="text_ff2faeed">#FF2FAEED</color>
+    <color name="text_ffbbbbbb">#FFBBBBBB</color>
+    <color name="text_4d2faeed">#4D2FAEED</color>
+    <color name="text_ff5eaee3">#FF5EAEE3</color>
+    <color name="text_5A688E">#5A688E</color>
+
+    <!--背景填充色-->
+    <color name="bg_fff2f6f7">#FFF2F6F7</color>
+    <color name="bg_662faeed">#662FAEED</color>
+    <color name="bg_ff2faeed">#FF2FAEED</color>
+    <color name="bg_ffe35e5e">#FFE35E5E</color>
+    <color name="bg_f2f6f7">#F2F6F7</color>
+    <color name="bg_ffff6e6e">#FFFF6E6E</color>
+    <color name="bg_ffeeeeee">#FFEEEEEE</color>
+    <color name="bg_fff6f6f6">#FFF6F6F6</color>
+
+    <!--边框颜色-->
+    <color name="stroke_4dbbbbbb">#4DBBBBBB</color>
+</resources>

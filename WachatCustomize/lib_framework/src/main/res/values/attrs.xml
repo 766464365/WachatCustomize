@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义TabViw相关属性 开始-->
+    <declare-styleable name="TabView">
+        <attr name="tab_textViewSelColor"
+            format="reference|color"/>
+        <attr name="tab_textViewUnSelColor"
+            format="reference|color"/>
+        <attr name="tab_tabViewBackgroundColor"
+            format="reference|color"/>
+        <attr name="tab_tabViewHeight"
+            format="dimension"/>
+        <attr name="imageViewTextViewMargin"
+            format="dimension"/>
+        <attr name="tab_textViewSize"
+            format="dimension"/>
+        <attr name="tab_imageViewWidth"
+            format="dimension"/>
+        <attr name="tab_imageViewHeight"
+            format="dimension"/>
+        <attr name="tab_tabViewGravity">
+        <flag name="top" value="0x30" />
+        <flag name="bottom" value="0x50" />
+        <flag name="left" value="0x03" />
+        <flag name="right" value="0x05" />
+        </attr>
+        <attr name="tab_tabViewDefaultPosition"
+            format="integer"/>
+    </declare-styleable>
+    <!--自定义TabViw相关属性 结束-->
+
+    <!--扫描二维码相关自定义属性 开始-->
+    <declare-styleable name="ViewfinderView">
+        <attr name="corner_color" format="color"/>
+        <attr name="laser_color" format="color"/>
+        <attr name="frame_color" format="color" />
+        <attr name="mask_color" format="color" />
+        <attr name="result_point_color" format="color"/>
+        <attr name="result_color" format="color" />
+        <attr name="label_text_color" format="color"/>
+        <attr name="label_text" format="string"/>
+        <attr name="label_text_size" format="float"/>
+    </declare-styleable>
+    <!--扫描二维码相关自定义属性 结束-->
+
+    <!--开关按钮自定义属性 开始-->
+    <declare-styleable name="slideswitch">
+        <attr name="themeColor" format="color" />
+        <attr name="isOpen" format="boolean" />
+        <attr name="shape">
+            <enum name="rect" value="1" />
+            <enum name="circle" value="2" />
+        </attr>
+    </declare-styleable>
+    <!--开关按钮自定义属性 结束-->
+
+</resources>
