@@ -3,4 +3,38 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colortitilebarblue">#FF2FAEED</color>
+    <color name="color_black">#000000</color>
+    <color name="color_hint_blue">#4D2FAEED</color>
+    <color name="color_gray">#F6F6F6</color>
+    <color name="color_orange">#FF9643</color>
+    <color name="color_green">#34D166</color>
+    <color name="color_orderstats_green">#34D166</color>
+    <color name="color_hint_gray">#4DBBBBBB</color>
+
+    <!--按钮颜色-->
+    <color name="color_btn_gray">#FFBBBBBB</color>
+    <color name="color_btn_blue">#FF2FAEED</color>
+
+    <!--文本颜色-->
+    <color name="text_ff333333">#FF333333</color>
+    <color name="text_ff888888">#FF888888</color>
+    <color name="text_ff2faeed">#FF2FAEED</color>
+    <color name="text_ffbbbbbb">#FFBBBBBB</color>
+    <color name="text_4d2faeed">#4D2FAEED</color>
+    <color name="text_45C018">#45C018</color>
+    <color name="text_9E9E9E">#9E9E9E</color>
+
+    <!--背景填充色-->
+    <color name="bg_fff2f6f7">#FFF2F6F7</color>
+    <color name="bg_662faeed">#662FAEED</color>
+    <color name="bg_ff2faeed">#FF2FAEED</color>
+    <color name="bg_ffe35e5e">#FFE35E5E</color>
+    <color name="bg_f2f6f7">#F2F6F7</color>
+    <color name="bg_ffff6e6e">#FFFF6E6E</color>
+    <color name="bg_f303030">#303030</color>
+
+    <!--边框颜色-->
+    <color name="stroke_4dbbbbbb">#4DBBBBBB</color>
 </resources>

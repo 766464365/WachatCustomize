@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--公共的标题栏-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/y144"
+    android:background="#303030">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/x30"
+        android:gravity="center"
+        android:text="微信"
+        android:textColor="@color/colorWhite"
+        android:textSize="@dimen/x54"/>
+
+    <ImageView
+        android:id="@+id/ivSearch"
+        android:layout_width="@dimen/x70"
+        android:layout_height="@dimen/x70"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x180"
+        android:src="@drawable/ic_common_search"/>
+
+    <ImageView
+        android:id="@+id/ivAdd"
+        android:layout_width="@dimen/x80"
+        android:layout_height="@dimen/x80"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/x30"
+        android:src="@drawable/ic_common_add"/>
+
+</RelativeLayout>
