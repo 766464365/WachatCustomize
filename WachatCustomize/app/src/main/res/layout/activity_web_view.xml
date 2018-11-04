@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.webview.WebViewActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y144"
+        android:background="@color/bg_C1C1C1">
+
+        <ImageView
+            android:id="@+id/iv_left"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"
+            android:background="@color/bg_f303030" />
+
+        <ImageView
+            android:id="@+id/iv_right"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:background="@color/bg_f303030" />
+
+    </RelativeLayout>
+    <WebView
+        android:id="@+id/webview"
+        android:layout_below="@id/title"
+        android:layout_marginBottom="@dimen/x141"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></WebView>
+    <RelativeLayout
+        android:id="@+id/bottombar"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/x141">
+        <ImageView
+            android:layout_marginLeft="@dimen/x410"
+            android:layout_centerVertical="true"
+            android:id="@+id/iv_bottom_left"
+            android:background="@drawable/ic_left"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80" />
+        <ImageView
+            android:id="@+id/iv_bottom_right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/x410"
+            android:background="@drawable/ic_right"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80" />
+    </RelativeLayout>
+</RelativeLayout>

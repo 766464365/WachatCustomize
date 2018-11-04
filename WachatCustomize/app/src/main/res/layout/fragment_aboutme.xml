@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/bg_EBEBEB"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y144"
+        layout="@layout/common_title"/>
+    <RelativeLayout
+        android:layout_below="@id/title"
+        android:layout_marginTop="@dimen/y60"
+        android:id="@+id/rl_info"
+        android:background="@color/colorWhite"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y220">
+        <ImageView
+            android:id="@+id/iv_avator"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/y40"
+            android:background="@color/color_btn_blue"
+            android:layout_width="@dimen/y190"
+            android:layout_height="@dimen/y190" />
+        <TextView
+            android:id="@+id/tv_name"
+            android:text="allen"
+            android:textSize="@dimen/x52"
+            android:textColor="@color/text_ff333333"
+            android:layout_marginLeft="@dimen/y260"
+            android:layout_marginTop="@dimen/y50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_id"
+            android:text="微信号:Rsles001"
+            android:layout_below="@+id/tv_name"
+            android:textSize="@dimen/x40"
+            android:layout_marginLeft="@dimen/y260"
+            android:textColor="@color/text_ffbbbbbb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_code"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@color/color_btn_blue"
+            android:layout_marginRight="@dimen/x60"
+            android:layout_width="@dimen/x80"
+            android:layout_height="@dimen/x80" />
+    </RelativeLayout>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/rl_info"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_pocket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/list_item_pocket"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_favorite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/list_item_favorite"
+        android:layout_marginTop="@dimen/x2"
+        android:id="@+id/list_item_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/list_item_post"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_setting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+
+</RelativeLayout>

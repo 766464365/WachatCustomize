@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/bg_EBEBEB"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/y144"
+        layout="@layout/common_title"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/title"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/list_item_post"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_scan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <com.xuwei.wachatcustomize.main.util.view.OrderDetailItemClickable
+        android:layout_below="@+id/list_item_scan"
+        android:layout_marginTop="@dimen/x30"
+        android:id="@+id/list_item_mini"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

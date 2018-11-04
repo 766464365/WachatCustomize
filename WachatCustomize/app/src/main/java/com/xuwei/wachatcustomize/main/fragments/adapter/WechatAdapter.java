@@ -59,7 +59,7 @@ public class WechatAdapter extends RecyclerView.Adapter<WechatAdapter.MyViewHold
 
     @Override
     public int getItemCount() {
-        return 5;          //暂时设定
+        return 15;          //暂时设定
     }
 
 

@@ -34,7 +34,7 @@
                                           <PersistentState>
                                             <option name="values">
                                               <map>
-                                                <entry key="url" value="jar:file:/F:/android%20studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_add_black_24dp.xml" />
+                                                <entry key="url" value="jar:file:/F:/android%20studio/plugins/android/lib/android.jar!/images/material_design_icons/notification/ic_more_black_24dp.xml" />
                                               </map>
                                             </option>
                                           </PersistentState>
@@ -44,8 +44,9 @@
                                   </option>
                                   <option name="values">
                                     <map>
-                                      <entry key="outputName" value="ic_common_add" />
-                                      <entry key="theme" value="HOLO_DARK" />
+                                      <entry key="outputName" value="ic_postadapt_more" />
+                                      <entry key="theme" value="CUSTOM" />
+                                      <entry key="themeColor" value="838caa" />
                                     </map>
                                   </option>
                                 </PersistentState>

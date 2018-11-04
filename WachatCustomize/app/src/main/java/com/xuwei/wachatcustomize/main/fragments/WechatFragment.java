@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.xuwei.framework.recyclerview.SpaceItemDecoration;
+import com.xuwei.framework.utils.ToastUtils;
 import com.xuwei.wachatcustomize.R;
 import com.xuwei.wachatcustomize.main.fragments.adapter.WechatAdapter;
 
@@ -26,7 +27,7 @@ public class WechatFragment extends Fragment implements WechatAdapter.OnItemClic
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.wechat_fragment_home, null);
+        View view = inflater.inflate(R.layout.fragment_wechat, null);
         unbinder = ButterKnife.bind(this, view);
         initRecyclerView();
         return view;
@@ -51,6 +52,6 @@ public class WechatFragment extends Fragment implements WechatAdapter.OnItemClic
 
     @Override
     public void onItemClick(View v, int position) {
-
+        ToastUtils.getInstance(getContext()).show("颠倒了我");
     }
 }

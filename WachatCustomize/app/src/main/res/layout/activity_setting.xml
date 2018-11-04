@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context=".main.setting.SettingActivity">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:focusableInTouchMode="true"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_model"
+            android:text="模式"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Spinner
+            android:id="@+id/spiner"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/x60"
+            android:layout_marginLeft="@dimen/x100"
+            android:layout_toRightOf="@+id/tv_model"
+            android:entries="@array/spiner" />
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_below="@id/tv_model"
+            android:layout_marginTop="@dimen/x20"
+            android:text="票圈文字:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/et_label"
+            android:hint="请输入想要在朋友圈显示的文字"
+            android:layout_below="@id/tv_label"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x300" />
+        <Button
+            android:text="确定"
+            android:id="@+id/btn_text_ok"
+            android:layout_below="@id/et_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_below="@+id/btn_text_ok"
+            android:id="@+id/tv_uri"
+            android:text="票圈链接:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_url"
+            android:hint="请输入想要在朋友圈指向的链接"
+            android:layout_below="@id/tv_uri"
+            android:background="@null"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x300" />
+        <Button
+            android:text="确定"
+            android:id="@+id/btn_url_ok"
+            android:layout_below="@id/et_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:id="@+id/switch_url"
+            android:layout_below="@id/et_url"
+            android:layout_toRightOf="@+id/btn_url_ok"
+            android:layout_width="wrap_content"
+            android:text="开启链接指向"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_likeNum"
+            android:layout_below="@+id/btn_url_ok"
+            android:text="点赞人数"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/et_likeNum"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/x100"
+            android:layout_below="@+id/tv_likeNum"
+            android:background="@null"
+            android:hint="请输入要设置的点赞数"
+            android:inputType="number" />
+        <Button
+            android:id="@+id/btn_likeNum_ok"
+            android:layout_below="@+id/et_likeNum"
+            android:text="点赞数确定"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <Switch
+            android:id="@+id/swtich_likeNum"
+            android:layout_below="@id/et_likeNum"
+            android:layout_toRightOf="@+id/btn_likeNum_ok"
+            android:text="是否开启点赞显示"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</ScrollView>

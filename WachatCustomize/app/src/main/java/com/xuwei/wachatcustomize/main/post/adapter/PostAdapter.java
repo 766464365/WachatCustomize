@@ -5,12 +5,15 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.xuwei.wachatcustomize.R;
-import com.xuwei.wachatcustomize.main.post.data.WaitOrderDataBase;
+import com.xuwei.wachatcustomize.main.util.SharepreferenceUtil;
 
-import java.util.List;
-
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
@@ -22,7 +25,10 @@ import butterknife.ButterKnife;
  */
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> implements View.OnClickListener {
 
-    private List<WaitOrderDataBase> dataBeans;
+
+
+    private String[] nameStr = {"Allen", "王不留行夕", "那一爪的风情", "hahahah", "Allen", "王不留行夕", "那一爪的风情", "hahahah",
+            "Allen", "王不留行夕", "那一爪的风情", "hahahah"};
 
     private Context context;
 
@@ -34,9 +40,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     }
 
-    public void setData(List<WaitOrderDataBase> dataBean) {
-        this.dataBeans=dataBean;
-    }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -49,32 +52,40 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-//        holder.itemView.setTag(position);
-//        holder.itemDataBean=dataBeans.get(position);
-//
-//        holder.tvId.setText("运单号:" + dataBeans.get(position).getWaybillId());
+        holder.itemView.setTag(position);
+        if(position==0){
+            ViewGroup.LayoutParams layoutParams = holder.relaParent.getLayoutParams();
+            layoutParams.height=400;
+            holder.relaParent.setLayoutParams(layoutParams);
+        }
+        if (SharepreferenceUtil.readStrFromPre("postStr") != null && !SharepreferenceUtil.readStrFromPre("postStr").equals("")) {
+            holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
+        }
+        holder.tvName.setText(nameStr[position]);
         holder.bind();
+
+
     }
 
     @Override
     public int getItemCount() {
-        return dataBeans.size();          //暂时设定
+        return 10;          //暂时设定
     }
 
 
-
-
-    public class MyViewHolder extends RecyclerView.ViewHolder  {
-//        @BindView(R.id.tv_status_left)
-//        TextView tvStatusLeft;
-//        @BindView(R.id.tv_id)
-//        TextView tvId;
-//        @BindView(R.id.tv_status_right)
-//        TextView tvStatusRight;
-//        @BindView(R.id.rela_goto)
-//        RelativeLayout relaGoto;
-//
-//        WaitOrderDataBase.DataBean itemDataBean;
+    public class MyViewHolder extends RecyclerView.ViewHolder {
+        @BindView(R.id.rela_parent)
+        RelativeLayout relaParent;
+        @BindView(R.id.iv_avatar)
+        ImageView ivAvatar;
+        @BindView(R.id.tv_name)
+        TextView tvName;
+        @BindView(R.id.tv_content)
+        TextView tvContent;
+        @BindView(R.id.tv_date)
+        TextView tvDate;
+        @BindView(R.id.iv_more)
+        ImageView ivMore;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -82,7 +93,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         }
 
         public void bind() {
-            //tvOrderId.setText("试一下");
 
 
         }
@@ -94,10 +104,9 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         void onItemClick(View v, int position);
     }
 
-    public interface OnGotoClickListener{
+    public interface OnGotoClickListener {
         void onGotoClick(View v, int position);
     }
-
 
 
     @Override
@@ -111,7 +120,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         mItemClickListener = itemClickListener;
     }
 
-    public  void setmGotoClikcListener(OnGotoClickListener monGotoClickListener){
-        onGotoClickListener=monGotoClickListener;
+    public void setmGotoClikcListener(OnGotoClickListener monGotoClickListener) {
+        onGotoClickListener = monGotoClickListener;
     }
 }

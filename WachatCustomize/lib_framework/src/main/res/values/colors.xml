@@ -46,6 +46,7 @@
     <color name="bg_ffff6e6e">#FFFF6E6E</color>
     <color name="bg_ffeeeeee">#FFEEEEEE</color>
     <color name="bg_fff6f6f6">#FFF6F6F6</color>
+    <color name="bg_303030">#FF303030</color>
 
     <!--边框颜色-->
     <color name="stroke_4dbbbbbb">#4DBBBBBB</color>

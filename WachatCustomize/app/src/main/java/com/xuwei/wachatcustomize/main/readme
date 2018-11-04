@@ -1,0 +1,16 @@
+目前在Sp中设置的键值对如下（Sp名字：settingInfo）
+String类：
+1.postStr 票圈第一条显示文字
+2.postUrl 票圈链接指向
+3.likeNum 票圈点赞数
+4.model
+    0-----文字模式
+    1-----图片模式
+    2-----三方链接模式
+
+
+boolean状态类：
+1.urlAble  是否开启票圈链接指向
+2.likeAble 是否开启票圈点赞显示
+
+

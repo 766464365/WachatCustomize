@@ -1,19 +1,25 @@
 package com.xuwei.wachatcustomize.main;
 
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 
 import com.xuwei.framework.base.BaseActivity;
 import com.xuwei.wachatcustomize.R;
+import com.xuwei.wachatcustomize.main.fragments.AboutMeFragment;
+import com.xuwei.wachatcustomize.main.fragments.FoundFragments;
 import com.xuwei.wachatcustomize.main.fragments.StatementFragment;
 import com.xuwei.wachatcustomize.main.fragments.WechatFragment;
+import com.xuwei.wachatcustomize.main.util.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,8 +52,9 @@ public class MainActivity extends BaseActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
-
+        setStatsBarColor(R.color.bg_f303030);       //设置标题栏颜色
     }
+
 
     private void initView() {
         fragmentManager = getSupportFragmentManager();
@@ -79,14 +86,14 @@ public class MainActivity extends BaseActivity {
                         break;
                     case R.id.radioBtnPost:
                         if (postFragment == null) {
-                            postFragment = new StatementFragment();
+                            postFragment = new FoundFragments();
                             trx.add(R.id.frameLayoutContainer, postFragment);
                         }
                         temp = postFragment;
                         break;
                     case R.id.radioBtnMe:
                         if (aboutMeFragment == null) {
-                            aboutMeFragment = new StatementFragment();
+                            aboutMeFragment = new AboutMeFragment();
                             trx.add(R.id.frameLayoutContainer, aboutMeFragment);
                         }
                         temp = aboutMeFragment;
@@ -111,4 +118,5 @@ public class MainActivity extends BaseActivity {
         drawables[1].setBounds(0, 0, width, width);
         rb.setCompoundDrawables(null, drawables[1], null, null);
     }
+
 }

@@ -2,46 +2,72 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xuwei.wachatcustomize">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:name=".main.util.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <!--主页选择  开始 -->
+
+        <!-- 主页选择  开始 -->
         <activity
             android:name=".main.MainActivity"
+            android:launchMode="singleInstance"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <!--主页选择  结束-->
+        <!-- 主页选择  结束 -->
 
-        <!--转发票圈设置  开始-->
+
+        <!-- 转发票圈设置  开始 -->
         <activity
             android:name=".main.forward.ForwardSettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <!--转发票圈设置  结束-->
+        <!-- 转发票圈设置  结束 -->
 
-        <!--点赞设置  开始-->
+
+        <!-- 点赞设置  开始 -->
         <activity
             android:name=".main.like.LikeSettingActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <!--点赞设置  结束-->
+        <!-- 点赞设置  结束 -->
 
-        <!--朋友圈开始  结束-->
+
+        <!-- 朋友圈开始  结束 -->
         <activity
             android:name=".main.post.PostActivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <!--朋友圈 结束-->
+        <!-- 朋友圈 结束 -->
+        <activity android:name=".main.setting.SettingActivity" />
+
+        <receiver
+            android:name=".main.MyReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.wechatcustomize.callup" />
+            </intent-filter>
+        </receiver>
+
+        <!-- 朋友圈webview开始   -->
+        <activity
+            android:name=".main.webview.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
+        </activity>
+        <!-- 朋友圈webview结束 -->
     </application>
 
 </manifest>

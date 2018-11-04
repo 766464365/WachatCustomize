@@ -2,15 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:focusableInTouchMode="true"
     android:layout_height="match_parent"
     tools:context=".main.post.PostActivity">
-    <include
+    <RelativeLayout
         android:id="@+id/title"
+        android:background="@color/bg_C1C1C1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/y144"
-        layout="@layout/layout_common_title"
-        />
+        android:layout_height="@dimen/y144">
+        <ImageView
+            android:id="@+id/iv_left"
+            android:background="@color/bg_f303030"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/x30"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100" />
+        <ImageView
+            android:id="@+id/iv_right"
+            android:background="@color/bg_f303030"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/x30"
+            android:layout_width="@dimen/x100"
+            android:layout_height="@dimen/x100" />
+
+    </RelativeLayout>
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_below="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -22,9 +40,10 @@
                android:id="@+id/cover"
                android:layout_width="match_parent"
                android:layout_height="@dimen/y600"
-               android:src="@color/bg_f2f6f7"
+               android:src="@color/bg_C1C1C1"
                />
            <TextView
+               android:id="@+id/tv_hint"
                android:text="轻触更换主题图片"
                android:textColor="@color/text_ff333333"
                android:layout_centerHorizontal="true"
