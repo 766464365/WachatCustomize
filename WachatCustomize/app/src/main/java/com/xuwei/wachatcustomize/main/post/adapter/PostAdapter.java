@@ -1,17 +1,22 @@
 package com.xuwei.wachatcustomize.main.post.adapter;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.widget.RecyclerView;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.xuwei.wachatcustomize.R;
 import com.xuwei.wachatcustomize.main.util.SharepreferenceUtil;
+
+import java.io.ByteArrayInputStream;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,7 +29,7 @@ import butterknife.ButterKnife;
  * on 2018/7/26 0026.
  */
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> implements View.OnClickListener {
-
+    private ImageView ivcontent;
 
 
     private String[] nameStr = {"Allen", "王不留行夕", "那一爪的风情", "hahahah", "Allen", "王不留行夕", "那一爪的风情", "hahahah",
@@ -52,15 +57,48 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
+        ivcontent=holder.ivContent;
         holder.itemView.setTag(position);
-        if(position==0){
-            ViewGroup.LayoutParams layoutParams = holder.relaParent.getLayoutParams();
-            layoutParams.height=400;
-            holder.relaParent.setLayoutParams(layoutParams);
+        ViewGroup.LayoutParams layoutParams = holder.relaParent.getLayoutParams();
+        ViewGroup.LayoutParams layoutParamsContent = holder.ivContent.getLayoutParams();
+        if (position == 0) {
+            switch (SharepreferenceUtil.readStrFromPre("model")) {
+                case "0":       //文字模式
+                    holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
+                    break;
+                case "1":       //图片模式
+                    holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
+                    layoutParams.height = 800;
+                    holder.relaParent.setLayoutParams(layoutParams);
+                    layoutParamsContent.height=600;
+                    layoutParamsContent.width=600;
+                    getBitmapFromSharedPreferences();
+                    holder.ivContent.setLayoutParams(layoutParamsContent);
+                    holder.ivContent.setVisibility(View.VISIBLE);
+
+                    break;
+                case "2":       //链接模式
+                    holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
+                    layoutParams.height = 400;
+                    holder.relaParent.setLayoutParams(layoutParams);
+                    layoutParamsContent.height=200;
+                    layoutParamsContent.width=600;
+                    getBitmapFromSharedPreferences();
+                    holder.ivContent.setLayoutParams(layoutParamsContent);
+                    holder.ivContent.setVisibility(View.VISIBLE);
+                    break;
+                default:
+                    break;
+            }
+
+//
+//            ViewGroup.LayoutParams layoutParams = holder.relaParent.getLayoutParams();
+//            layoutParams.height=400;
+//            holder.relaParent.setLayoutParams(layoutParams);
         }
-        if (SharepreferenceUtil.readStrFromPre("postStr") != null && !SharepreferenceUtil.readStrFromPre("postStr").equals("")) {
-            holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
-        }
+//        if (SharepreferenceUtil.readStrFromPre("postStr") != null && !SharepreferenceUtil.readStrFromPre("postStr").equals("")) {
+//            holder.tvContent.setText((String) SharepreferenceUtil.readStrFromPre("postStr"));
+//        }
         holder.tvName.setText(nameStr[position]);
         holder.bind();
 
@@ -86,7 +124,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
         TextView tvDate;
         @BindView(R.id.iv_more)
         ImageView ivMore;
-
+        @BindView(R.id.iv_content)
+        ImageView ivContent;
         public MyViewHolder(View itemView) {
             super(itemView);
             ButterKnife.bind(this, itemView);
@@ -111,7 +150,8 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     @Override
     public void onClick(View v) {
-        if (mItemClickListener != null) {
+        //链接模式才能开启webview
+        if (mItemClickListener != null && SharepreferenceUtil.readStrFromPre("model").equals("2")) {
             mItemClickListener.onItemClick(v, (Integer) v.getTag());
         }
     }
@@ -122,5 +162,21 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.MyViewHolder> 
 
     public void setmGotoClikcListener(OnGotoClickListener monGotoClickListener) {
         onGotoClickListener = monGotoClickListener;
+    }
+    //从SharedPreferences获取图片
+    private  void getBitmapFromSharedPreferences() {
+        //第一步:取出字符串形式的Bitmap
+        String imageString = SharepreferenceUtil.readStrFromPre("image");
+        //第二步:利用Base64将字符串转换为ByteArrayInputStream
+        byte[] byteArray = Base64.decode(imageString, Base64.DEFAULT);
+        if (byteArray.length == 0) {
+            ivcontent.setImageResource(R.mipmap.ic_launcher);
+        } else {
+            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArray);
+
+            //第三步:利用ByteArrayInputStream生成Bitmap
+            Bitmap bitmap = BitmapFactory.decodeStream(byteArrayInputStream);
+            ivcontent.setImageBitmap(bitmap);
+        }
     }
 }

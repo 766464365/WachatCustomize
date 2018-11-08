@@ -97,5 +97,17 @@
             android:text="是否开启点赞显示"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <Button
+            android:id="@+id/btn_choose_pic"
+            android:layout_below="@+id/btn_likeNum_ok"
+            android:text="选择图片"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/iv_choose_pic"
+            android:layout_below="@+id/btn_choose_pic"
+            android:background="@drawable/ic_right"
+            android:layout_width="@dimen/x1000"
+            android:layout_height="@dimen/x1000" />
     </RelativeLayout>
 </ScrollView>
